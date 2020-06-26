@@ -1,7 +1,9 @@
 <?php
-if (isset($_POST['stack']) && isset($_POST['pos'])) {
-    $stack = $_POST['stack'];
-    $pos = $_POST['pos'];
+if (isset($_REQUEST['stack']) && isset($_REQUEST['pos'])) {
+    $stack = $_REQUEST['stack'];
+    $pos = $_REQUEST['pos'];
+    pictureOutput($stack, $pos);
+    echo ($pos);
 } else {
     include("index.html");
     echo("test123");
@@ -15,7 +17,7 @@ function pictureOutput($stack, $pos)
                 case 'button':
                     echo('GTO push for 15 bb when hero button');
                     //вывод пикчи
-                    echo(imagepng(imagecreatefrompng("Screenshot_2.png")));
+                    //echo(imagepng(imagecreatefrompng("Screenshot_2.png")));
                     break;
                 case 'sb(bu fold)':
                     echo('sb(bu fold)');
@@ -39,5 +41,3 @@ function pictureOutput($stack, $pos)
             echo ("а я не придумал че екоу");
     }
 }
-
-
